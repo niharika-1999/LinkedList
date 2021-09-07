@@ -42,6 +42,29 @@ public class LinkedList<T>  //<T> is generic parameter
 				new_node.next = temp;
 			}
 	 }
+	 
+	 public void insertBetween(int index, T data)
+	 {
+		 Node<T> new_node= new Node<>(data);
+		 new_node.data=data;
+		 new_node.next=null;
+		 
+		 if(index==0)
+		 {
+			 addNode(data);
+		 }
+		 else
+		 {
+			 Node<T> temp = head;
+			 for(int i=0;i<index-1;i++)
+			 {
+				 temp=temp.next;
+			 }
+			 new_node.next=temp.next;
+			 temp.next=new_node;
+		 }
+			 
+	 }
 		
 	 public void display() //Printing LinkedList
 	 {
@@ -56,15 +79,16 @@ public class LinkedList<T>  //<T> is generic parameter
 	 }
 	 
 	 public static void main(String[] args)//Main function
-     {
+	 {
 	    LinkedList<Integer> list = new LinkedList<>();
 	    list.insert(56);
 	    list.insert(30);
 	    list.insert(70);
 	    list.display();
      }
+  }
 	
-}
+
   
   
   
