@@ -15,6 +15,8 @@ public class LinkedListTest {
 			list.delete(list.key);
 			list.display();
 		}
+		list.sizeLinkedList();
 	}
-
 }
+
+

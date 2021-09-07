@@ -4,6 +4,7 @@ public class LinkedList<T>  //<T> is generic parameter
   {
 	 public Node<T> head;
 	 int key=0;
+	 int size=0;
 	
 	 public void insert(T data) //New node is created using insert
 	 {
@@ -114,6 +115,7 @@ public class LinkedList<T>  //<T> is generic parameter
 			temp.next=newTemp.next;
 		 }
 	 }
+	 
 	 public boolean searchLinkedList(T search)//Method used to search element
 	 {
 		 key=0;
@@ -123,7 +125,7 @@ public class LinkedList<T>  //<T> is generic parameter
 		 }
 		 if(head.data==search)
 		 {
-			 System.out.println("Element found" + key);
+			 System.out.println("Element found " +key);
 			 return true;
 		 }
 		 Node<T> temp=head;
@@ -133,17 +135,38 @@ public class LinkedList<T>  //<T> is generic parameter
 			 key++;
 			 if(temp.data==search)
 			 {
-				System.out.println("Element found" + key);
+				System.out.println("Element found " +key);
 				return true; 
 			 }
 		 }
-		 System.out.println("Element not found" + key);
+		 System.out.println("Element not found " +key);
 		 return false;
 		 
 	 }
 	 
+	 public int sizeLinkedList()//Method to find size of LinkedList
+	 {
+		 size=0;
+		 if(head==null)
+		 {
+			 System.out.println(size);
+			 return size;
+		 }
 	 
+	 Node<T> temp=head;
+	 while(temp.next!=null)
+	 {
+		 temp=temp.next;
+		 size++;
+	 }
+	 size++;
+	 System.out.println("Size " + size);
+	 return size;
+	 }
   }
+	 
+	 
+  
 	
 		 
 	 
