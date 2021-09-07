@@ -3,6 +3,7 @@ package com.bridgelabzLinkedList;
 public class LinkedList<T>  //<T> is generic parameter
   {
 	 public Node<T> head;
+	 int key=0;
 	
 	 public void insert(T data) //New node is created using insert
 	 {
@@ -113,6 +114,35 @@ public class LinkedList<T>  //<T> is generic parameter
 			temp.next=newTemp.next;
 		 }
 	 }
+	 public boolean searchLinkedList(T search)//Method used to search element
+	 {
+		 key=0;
+		 if(head==null)
+		 {
+			 return false;
+		 }
+		 if(head.data==search)
+		 {
+			 System.out.println("Element found" + key);
+			 return true;
+		 }
+		 Node<T> temp=head;
+		 while(temp.next!=null)
+		 {
+			 temp = temp.next;
+			 key++;
+			 if(temp.data==search)
+			 {
+				System.out.println("Element found" + key);
+				return true; 
+			 }
+		 }
+		 System.out.println("Element not found" + key);
+		 return false;
+		 
+	 }
+	 
+	 
   }
 	
 		 
