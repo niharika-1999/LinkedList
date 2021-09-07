@@ -25,7 +25,7 @@ public class LinkedList<T>  //<T> is generic parameter
 		}
 	 }
 	 
-	 public void addNode(T data)
+	 public void addNode(T data)//Method to add at start 
 	 {
 		 Node<T> new_node= new Node<>(data);
 		 new_node.data=data;
@@ -43,7 +43,7 @@ public class LinkedList<T>  //<T> is generic parameter
 			}
 	 }
 	 
-	 public void insertBetween(int index, T data)
+	 public void insertBetween(int index, T data)//Method to add in between 
 	 {
 		 Node<T> new_node= new Node<>(data);
 		 new_node.data=data;
@@ -66,10 +66,6 @@ public class LinkedList<T>  //<T> is generic parameter
 			 
 	 }
 	 
-	 public void pop()
-	 {
-		 head=head.next;
-	 }
 		
 	 public void display() //Printing LinkedList
 	 {
@@ -83,17 +79,49 @@ public class LinkedList<T>  //<T> is generic parameter
 	
 	 }
 	 
-	 
-	 public static void main(String[] args)//Main function
+	 public void pop()//Method to delete first element
 	 {
-	    LinkedList<Integer> object = new LinkedList<>();
-	    object.insert(56);
-	    object.insert(30);
-	    object.insert(70);
-	    object.display();
+		 head=head.next;
 	 }
-     
+	 
+	 public void popLast()//Method to delete last element
+	 {
+		 int index=0;
+		 Node<T> temp=head;
+		 while(temp.next!=null)
+		 {
+			 temp=temp.next;
+			 index++;
+		 }
+		 delete(index);
+	 }
+	 public void delete(int index)
+	 {
+		 if(index==0)
+		 {
+			 pop();
+		 }
+		 else
+		 {
+			Node<T> temp=head;
+			Node<T> newTemp = null;
+			for(int i=0;i<index-1;i++)
+			{
+				temp=temp.next;
+			}
+			newTemp=temp.next;
+			temp.next=newTemp.next;
+		 }
+	 }
   }
+	
+		 
+	 
+  
+	 
+	 
+	 
+	
 	
 
   
