@@ -84,14 +84,7 @@ public class LinkedList<T>  //<T> is generic parameter
 	 }
 	 
 	 
-	 public static void main(String[] args)//Main function
-	 {
-	    LinkedList<Integer> object = new LinkedList<>();
-	    object.insert(56);
-	    object.insert(30);
-	    object.insert(70);
-	    object.display();
-	 }
+	 
      
   }
 	
