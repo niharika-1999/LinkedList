@@ -66,7 +66,7 @@ public class LinkedList<T>  //<T> is generic parameter
 			 
 	 }
 	 
-	 public void pop()
+	 public void pop()//Method to delete first element
 	 {
 		 head=head.next;
 	 }
