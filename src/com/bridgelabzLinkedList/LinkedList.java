@@ -48,16 +48,28 @@ public class LinkedList<T>  //<T> is generic parameter
 		Node<T> temp = head;
 	    while(temp.next!=null)
 	    {
-	    	System.out.println(temp.data);
+	    	System.out.print(temp.data + "->");
 		    temp=temp.next;
 	    }
 	    System.out.println(temp.data);
 	
 	 }
-  }
+	 
+	 public static void main(String[] args)//Main function
+     {
+	    LinkedList<Integer> list = new LinkedList<>();
+	    list.insert(56);
+	    list.insert(30);
+	    list.insert(70);
+	    list.display();
+     }
+	
+}
+  
+  
   
      
-
+     
      
   
 	 
